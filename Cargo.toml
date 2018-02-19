@@ -1,0 +1,6 @@
+[package]
+name = "rust_chunk_code"
+version = "0.1.0"
+authors = ["Draco <playngdragon@gmail.com>"]
+
+[dependencies]
