@@ -2,26 +2,41 @@ fn main() {
     let count:i32 = 100;
 
     for italater in 0..count {
-    fizzbuzz(italater);
+    println!("{}",fizzbuzz(italater));
     }
 }
 
-fn fizzbuzz(italate_counter: i32){    
+fn fizzbuzz(italate_counter: i32) -> String{    
     if italate_counter % 3 == 0 && italate_counter % 5 == 0 {
-        println!("{} fizzbuzz",italate_counter);
+        "fizzbuzz".to_string()
     }
     else if italate_counter % 3 == 0 {
-        println!("{} fizz",italate_counter);
+        "fizz".to_string()
     }
     else if italate_counter % 5 == 0 {
-        println!("{} buzz",italate_counter);
+        "buzz".to_string()
     }
     else{
-        println!("{}",italate_counter);
+        italate_counter.to_string()
     }
 }
 
 #[test]
 fn can_test(){
     assert_eq!(1,1);
+}
+
+#[test]
+fn fizzbuzz_divided3(){
+    assert_eq!(fizzbuzz(3),"fizz".to_string());
+}
+
+#[test]
+fn fizzbuzz_divided5(){
+    assert_eq!(fizzbuzz(5),"buzz".to_string());
+}
+
+#[test]
+fn fizzbuzz_divided15(){
+    assert_eq!(fizzbuzz(15),"fizzbuzz".to_string());
 }
